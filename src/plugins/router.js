@@ -7,6 +7,10 @@ const routes = [
     {
         path: '/book-info',
         component: () => import('@/pages/BookInfoPage.vue')
+    },
+    {
+        path: '/login',
+        component: () => import('@/pages/LoginPage.vue')
     }
 ]
 
