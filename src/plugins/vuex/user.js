@@ -16,7 +16,7 @@ export default {
                         console.log('error catch ishladi')
                         reject()
                     })
-                    .finnaly(() => {
+                    .finally(() => {
                         console.log('final ishladi')
                     })
             })
