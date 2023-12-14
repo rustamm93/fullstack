@@ -1,11 +1,15 @@
 <template>
     <div class="col-12 col-md-2">
-        <div 
-            v-for="category of getCategories" 
-            v-bind:key="category.id" 
-            class="list-group"
-        >
-            <a href="#" class="list-group-item list-group-item-action">{{ category.name }}</a>
+        <div v-if="$route.path !== '/login'" class="list-group">
+            <router-link 
+                v-for="category of getCategories" 
+                v-bind:key="category.id" 
+                :to="'/categories/' + category.id"
+                class="list-group-item list-group-item-action"
+                :class="parseInt($route.params.id) === category.id ? 'active' : ''"
+            >
+                {{ category.name }}
+            </router-link>
         </div>
     </div>
 </template>

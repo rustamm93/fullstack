@@ -26,11 +26,12 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["fetchUserToken"]),
+        ...mapActions(["fetchUserToken", "fetchCategories"]),
         auth() {
             this.fetchUserToken(this.form)
                 .then(()=>{
-                    console.log('token olindi')
+                    console.log('login ok')
+                    this.fetchCategories()
                     this.$router.push('/')
                 })
             console.log('bu login auth funk')

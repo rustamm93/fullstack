@@ -28,6 +28,12 @@ export default {
     methods: {
         ...mapActions(['fetchBooks'])
     },
+    watch: {
+        '$route.params.id'() {
+            console.log('id ozgardi')
+            this.fetchBooks(this.$route.params.id)
+        }
+    },
     mounted() {
         console.log('booksRow yuklandi')
         this.fetchBooks()
